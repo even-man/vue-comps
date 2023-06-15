@@ -30,7 +30,7 @@ export default {
     delimitChipsFromPaste(e) {
       console.log(e.clipboardData.getData('text'));
       let text = e.clipboardData.getData('text').toString();
-      this.docIdList = text.split(/(?:,|\s)/);
+      this.docIdList = text.split(/\s+|,|\n/);
       if (this.docIdList.length === 1 && this.docIdList[0] === '') {
         this.docIdList = [];
       }
